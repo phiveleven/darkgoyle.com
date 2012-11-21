@@ -1,0 +1,38 @@
+.b { display:none }
+.bokeh .b { display:inline }
+.bokeh {
+    display: inline-block;
+    position: relative;
+    margin-top: -0.1px;
+    cursor: pointer;
+}
+
+.bokeh span.a,
+.bokeh span.b {
+    display: inline-block;
+    opacity: 0.12;
+    filter: alpha(opacity=12);
+}
+
+.bokeh span.b {
+    position: absolute;
+    margin: 0 -100% 0 0;
+    top: 0;
+}
+
+.bokeh:hover span.a {
+    opacity: 1.0;
+    filter: none;
+}
+
+.bokeh:hover span.b {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.bokeh span.b0 { left: 0.02em; margin-top: -.1em; }
+.bokeh span.b1 { left: 0.10em; margin-top: -.03em; }
+.bokeh span.b2 { left: 0.08em; margin-top: 0.07em; }
+.bokeh span.b3 { left: -.02em; margin-top: 0.10em; }
+.bokeh span.b4 { left: -0.1em; margin-top: 0.03em; }
+.bokeh span.b5 { left: -0.08em; margin-top: -0.07em; }

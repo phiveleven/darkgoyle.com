@@ -1,0 +1,16 @@
+<? 
+  include 'auth.php';
+  include 'xhr-handler.php';
+  include 'js-handler.php';
+  
+  header('Content-type: text/html; charset=utf-8'); 
+  include 'console.php';  
+?><!doctype html>
+<script src="/js/<?= base_convert($_SERVER['REQUEST_TIME'], 10, 36) ?>"></script>
+
+<title>I am Darkgoyle</title>
+<meta name=description content="To clarify, this is not actually me. This is
+      a website about some of the human author&rsquo;s motivatons for writing
+      software.">
+<link href="/skin" rel=stylesheet>
+

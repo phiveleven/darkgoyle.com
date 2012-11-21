@@ -1,0 +1,31 @@
+
+AddHandler php5-cgi .html
+AddDefaultCharset UTF-8
+
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} !(?:\.\w+)$ [NC]
+RewriteCond %{ENV:REDIRECT_STATUS} !200
+
+RewriteRule ^(.+)\.html$ /$1 [R=301]
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+)/?$ /$1.php [L]
+
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+)/?$ /$1.html [L]
+
+RewriteCond %{REQUEST_FILENAME}\.css -f
+RewriteRule ^(.+)/?$ /$1.css [L]
+
+RewriteCond %{REQUEST_FILENAME}\.js -f
+RewriteRule ^(.+)/?$ /$1.js [L]
+
+RewriteRule ^index\.php$ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.html?/$1 [L]

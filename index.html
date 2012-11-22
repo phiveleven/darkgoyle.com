@@ -1,11 +1,4 @@
-<? 
-  include 'header.html';
-?>
-<style>
-h1 { display:inline-block; margin-top:-0.1px; position:relative; cursor:pointer;
-	font-size:4.2em }
-h1 { -webkit-transition:1s ease-in-out; -moz-transition:1s ease-in-out }
-</style>
+<? $first_byte = round(microtime(true)*1e3); include 'header.html' ?>
 
 <h1>I am Darkgoyle.</h1>
 
@@ -31,11 +24,14 @@ of individuals like you and me that make what it becomes.
 <p>Some other fool owns my real-name domain. Bah.</p>
 
 
-<script>_gaq=[['_setAccount','UA-25782124-1'],['_trackPageview']]</script>
+<!--script>_gaq=[['_setAccount','UA-25782124-1'],['_trackPageview']]</script-->
+
+<? list($usec, $sec) = explode(' ', microtime()) ?>
+<script src="/js/<?= base_convert($first_byte, 10, 36) ?>.js"></script>
 
 <? if ($auth) { ?>
 <script src="//code.jquery.com/jquery-latest.min.js"></script>
 <script src="test/unit.js"></script>
-<? console('ready'); } ?>
+<? } ?>
 
 <!-- this is not the closing tag you are looking for -->

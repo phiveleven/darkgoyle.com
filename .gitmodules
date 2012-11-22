@@ -1,0 +1,3 @@
+[submodule "lib/DumbledORM"]
+	path = lib/DumbledORM
+	url = git://github.com/jasonmoo/DumbledORM.git
